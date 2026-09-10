@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Routing Works in Mesh Networks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>How Routing Works in Mesh Networks</h1>
+    </header>
+    <main>
+        <section id="routing-details">
+            <h2>How Routing Works in Mesh Networks</h2>
+            <p>Routing in mesh networks is a dynamic process where data packets are forwarded through the most efficient path available. Here's a detailed explanation of how it works:</p>
+            <ul>
+                <li><strong>Neighbor Discovery:</strong> Each node in the mesh network periodically broadcasts its presence to its neighbors. This helps in building a map of the network topology.</li>
+                <li><strong>Path Selection:</strong> When a node needs to send data, it evaluates all possible paths to the destination. The path with the lowest latency or highest throughput is typically chosen.</li>
+                <li><strong>Data Forwarding:</strong> Once a path is selected, the data is broken down into packets and forwarded through the chosen path. Each intermediate node along the path forwards the packet to the next node until it reaches the destination.</li>
+                <li><strong>Adaptive Routing:</strong> Mesh networks can adapt to changes in the network topology. If a node fails or a new node joins the network, the routing protocol automatically recalculates the best paths.</li>
+                <li><strong>Load Balancing:</strong> To ensure optimal performance, mesh networks can distribute traffic across multiple paths. This helps in balancing the load and preventing any single path from becoming a bottleneck.</li>
+            </ul>
+            <p>This dynamic and adaptive routing mechanism ensures that mesh networks are highly resilient and can handle various network conditions effectively.</p>
+            <div class="button-container">
+                <button class="back-button" onclick="window.location.href='index.html'">Back to Overview</button>
+                <button class="next-button" onclick="window.location.href='my_technique.html'">Next: My Technique</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+html {
+  height: 100%
+}
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #161616;
+}
+
+.container {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 0.8vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.8vh 0.8vh;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "nodes nodeInfo"
+    "nodes globalLog";
+}
+  
+#nodes { 
+  grid-area: nodes; 
+  border-color: #ee5396;
+  border-width: 0.01vh;
+  border-style: solid;
+}
+  
+.nodeInfo { 
+  grid-area: nodeInfo;
+  border-color: #ee5396;
+  border-width: 0.01vh;
+  border-style: solid;
+}
+  
+.globalLog { 
+  grid-area: globalLog;
+  border-color: #ee5396;
+  border-width: 0.01vh;
+  border-style: solid;
+}
+  

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilex:wght@400&display=swap');
+
+:root {
+  --color-primary: #161616;
+  --color-secondary: #262626;
+  --color-tertiary: #393939;
+  --color-accent: #ee5396;
+  --color-text-primary: #f2f4f8;
+  --color-text-secondary: #dde1e6;
+  --color-success: #42be65;
+  --color-danger: #ff5252;
+  --color-danger-dark: #d32f2f;
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+
+  --border-width: 2px;
+  --border-radius: 0px;
+  --gap: var(--spacing-md);
+  --transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  --font-family: 'Lilex', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--color-text-primary);
+    background-color: var(--color-primary);
+}
+
+h1, h2, h3 {
+    color: var(--color-accent);
+}
+
+header {
+    background: var(--color-secondary);
+    color: var(--color-text-primary);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+main {
+    padding: var(--spacing-lg);
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+    border: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    cursor: pointer;
+    font-family: var(--font-family);
+}
+
+button:hover {
+    background-color: #ff7eb6;
+}
+
+button:active {
+    background-color: #ff7eb6 !important;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    background: var(--color-secondary);
+    margin-top: var(--spacing-lg);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: var(--color-tertiary);
+    margin: var(--spacing-sm) 0;
+    padding: var(--spacing-lg);
+    border-left: var(--border-width) solid var(--color-accent);
+}

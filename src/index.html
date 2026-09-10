@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Visualization</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="../konva.js"></script>
+    <script src="../graphology.umd.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="nodes">
+            <div id="canvasWrapper"></div>
+        </div>
+        <div id="nodeInfo">
+            <div id="controller" class="active">
+                <h2 id="controllerTitle">Add New Node</h2>
+                <input id="nodeId" type="text" placeholder="Enter a unique name here...">
+                <button id="newNode">Add Node</button>
+                <button id="randomLayout">Random Layout</button>
+                <button id="clearAll">Clear All</button>
+            </div>
+            <div id="inspector">
+                <h2 id="nodeIdView">NODEID</h2>
+                <button id="deleteNode">Delete Node</button>
+                <div id="nodePeers"></div>
+            </div>
+        </div>
+        <div id="globalLog"></div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
