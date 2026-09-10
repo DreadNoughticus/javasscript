@@ -4,7 +4,7 @@ import { setupCanvas, resizeCanvas } from './modules/canvasSetup.js';
 import { updateNodeId } from './modules/nodeId.js';
 import { changeNodeConnections } from './modules/nodeConnections.js';
 import { state } from './modules/state.js'
-
+import {  } from './modules/crcts/tester.js'
 setupCanvas();
 
 const edges = []
