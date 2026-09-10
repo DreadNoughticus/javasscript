@@ -42,7 +42,7 @@ export function obfuscate(crct) {
       output_nodes.push(node)
     }
   })
-  const nodes = (crct)
+  const nodes = (crct.nodes)
   for (node in nodes) {
     if (input_nodes.includes(node) || output_nodes.includes(node)) {
       continue

@@ -1,5 +1,6 @@
 import { state } from './state.js'
 import { elements } from './domElements.js'
+import { openInspector, closeInspector } from './uiState.js'
 import showToast from '../../utils/toast.js';
 import { uniqueNamesGenerator, adjectives, colors, animals } from '../../../unique-names-generator.js';
 
@@ -40,6 +41,11 @@ export function setupCanvas() {
     visible: false,
   });
   state.tooltipLayer.add(state.tooltip)
+
+  state.stage.on('click tap', (e) => {
+    if (e.target.getClassName() === 'Circle') return;
+    closeInspector();
+  });
 }
 
 const MAX_NODES = 20;
@@ -113,6 +119,8 @@ function addNode(nodeId) {
   state.mainLayer.add(node);
   elements.nodeIdInput.value = '';
 
+  let didDrag = false;
+
   node.on('mousemove', () => {
     const mousePos = state.stage.getPointerPosition();
     state.tooltip.position({
@@ -124,12 +132,20 @@ function addNode(nodeId) {
     state.tooltipLayer.draw();
   });
   node.on('dragstart', () => {
+    didDrag = true;
     state.tooltip.hide();
     state.tooltipLayer.draw();
   });
   node.on('mouseout', () => {
     state.tooltip.hide();
     state.tooltipLayer.draw();
+  });
+  node.on('click tap', () => {
+    if (didDrag) {
+      didDrag = false;
+      return;
+    }
+    openInspector(nodeId);
   });
 }
 
@@ -167,11 +183,46 @@ elements.nodeIdInput.addEventListener('keypress', (e) => {
 
 elements.clearAllButton.addEventListener('click', clearAll);
 
+elements.deleteNodeButton.addEventListener('click', deleteSelectedNode);
+
+export function deleteSelectedNode() {
+  if (!state.selectedNode) {
+    showToast('No node selected');
+    return;
+  }
+
+  const nodeId = state.selectedNode;
+  
+  // Remove node from graph
+  if (state.graph.hasNode(nodeId)) {
+    state.graph.dropNode(nodeId);
+  }
+  
+  // Remove node from canvas
+  const node = state.stage.findOne(`#${nodeId}`);
+  if (node) {
+    node.destroy();
+  }
+  
+  // Remove all edges connected to this node from canvas
+  const lines = state.stage.find('Line');
+  lines.forEach((line) => {
+    const edgeId = line.attrs.id;
+    if (edgeId.includes(nodeId)) {
+      line.destroy();
+    }
+  });
+  
+  state.mainLayer.draw();
+  closeInspector();
+}
+
 export function clearAll() {
   // Clear all nodes and edges from both the graph and Konva canvas
   state.graph.clear();
   state.mainLayer.destroyChildren();
   state.mainLayer.draw();
+  closeInspector();
 }
 
 export function resizeCanvas() {

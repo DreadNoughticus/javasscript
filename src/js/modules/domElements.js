@@ -5,6 +5,7 @@ export const elements = {
   nodeIdInput: document.getElementById('nodeId'),
   newNodeButton: document.getElementById('newNode'),
   nodeIdView: document.getElementById('nodeIdView'),
+  nodePeers: document.getElementById('nodePeers'),
   deleteNodeButton: document.getElementById('deleteNode'),
   randomLayoutButton: document.getElementById('randomLayout'),
   clearAllButton: document.getElementById('clearAll')

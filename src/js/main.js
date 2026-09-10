@@ -1,5 +1,5 @@
 import { elements } from './modules/domElements.js';
-import { togglePanel } from './modules/uiState.js';
+import { togglePanel, updateInspectorPeers } from './modules/uiState.js';
 import { setupCanvas, resizeCanvas } from './modules/canvasSetup.js';
 import { updateNodeId } from './modules/nodeId.js';
 import { changeNodeConnections } from './modules/nodeConnections.js';
@@ -64,6 +64,9 @@ const loop = new Konva.Animation((frame) => {
     })
     
   })
+  
+  // Update inspector peers display dynamically
+  updateInspectorPeers();
 }, state.mainLayer);
 loop.start()
 

@@ -1,3 +1,4 @@
 export let state = {
-    'activePanel': 'controller'
+    'activePanel': 'controller',
+    selectedNode: null
 };
