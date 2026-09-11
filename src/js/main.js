@@ -13,9 +13,17 @@ elements.randomLayoutButton.addEventListener('click', () => {
   state.graph.forEachNode((node) => {
   })
 })
-
+let startNode = ""
+let endNode = ""
 elements.startNodeButton.addEventListener('click', () => {
-  
+  elements.startNodeButton.classList.remove('active')
+  elements.endNodeButton.classList.add('active')
+  startNode = elements.nodeIdView.textContent
+})
+elements.endNodeButton.addEventListener('click', () => {
+  elements.endNodeButton.classList.remove('active')
+  elements.startNodeButton.classList.add('active')
+  endNode = elements.nodeIdView.textContent
 })
 
 window.addEventListener('resize', () => resizeCanvas(elements))

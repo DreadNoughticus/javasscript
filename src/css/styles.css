@@ -300,6 +300,7 @@ body {
 }
 
 #startNode {
+
   padding: var(--spacing-md) var(--spacing-xl);
   background-color: var(--color-tertiary);
   border: var(--border-width) solid var(--color-success);
@@ -316,6 +317,7 @@ body {
   box-sizing: border-box;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: none;
 }
 
 #startNode:hover {
@@ -335,6 +337,7 @@ body {
   background-color: var(--color-success);
   border-color: var(--color-success);
   color: var(--color-primary);
+  display: inline-block
 }
 
 #endNode {
@@ -354,6 +357,7 @@ body {
   box-sizing: border-box;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: none;
 }
 
 #endNode:hover {
@@ -373,6 +377,7 @@ body {
   background-color: var(--color-danger);
   border-color: var(--color-danger);
   color: var(--color-primary);
+  display: inline-block;
 }
 
 #nodeIdView {
