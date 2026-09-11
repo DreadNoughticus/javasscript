@@ -1,5 +1,5 @@
 import { obfuscate } from "./gen.js";
-
+import { evaluate } from "./eval.js";
 let crct = new graphology.Graph({ type: "undirected" });
 
 const xortt = {
@@ -13,5 +13,4 @@ crct.addNode('xor1', {truthTable: xortt})
 crct.addNode('xor2', {truthTale: xortt})
 crct.addEdge('xor1', 'xor2')
 crct.forEachNode((node) => {
-    console.log(obfuscate(crct, node))
 })

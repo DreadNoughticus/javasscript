@@ -28,7 +28,6 @@ function getRandomBool() {
   const maxFloored = Math.floor(0);
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 }
-console.log(getRandomBool())
 
 export function obfuscate(crct) {
   let input_nodes = []
