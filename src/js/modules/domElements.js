@@ -8,7 +8,9 @@ export const elements = {
   nodePeers: document.getElementById('nodePeers'),
   deleteNodeButton: document.getElementById('deleteNode'),
   randomLayoutButton: document.getElementById('randomLayout'),
-  clearAllButton: document.getElementById('clearAll')
+  clearAllButton: document.getElementById('clearAll'), 
+  startNodeButton: document.getElementById('startNode'),
+  endNodeButton: document.getElementById('endNode')
 };
 
 for (const [key, value] of Object.entries(elements)) {

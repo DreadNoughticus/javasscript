@@ -14,6 +14,10 @@ elements.randomLayoutButton.addEventListener('click', () => {
   })
 })
 
+elements.startNodeButton.addEventListener('click', () => {
+  
+})
+
 window.addEventListener('resize', () => resizeCanvas(elements))
 const loop = new Konva.Animation((frame) => {
   state.graph.forEachNode((node) => {
@@ -69,6 +73,8 @@ const loop = new Konva.Animation((frame) => {
   updateInspectorPeers();
 }, state.mainLayer);
 loop.start()
+
+
 
 
 // REWRITE PAGES WITH CLAUDE
