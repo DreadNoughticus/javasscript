@@ -3,7 +3,7 @@ import { elements } from './domElements.js'
 import { updateNodeId } from './nodeId.js'
 
 export function togglePanel(panel) {
-  if (!['controller', 'inspector'].includes(panel)) {
+  if (!['controller', 'inspector', 'navigator'].includes(panel)) {
     throw new Error(`Invalid panel name: ${panel}`);
   }
 

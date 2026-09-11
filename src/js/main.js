@@ -1,5 +1,5 @@
 import { elements } from './modules/domElements.js';
-import { togglePanel, updateInspectorPeers } from './modules/uiState.js';
+import { togglePanel, updateInspectorPeers, openInspector } from './modules/uiState.js';
 import { setupCanvas, resizeCanvas } from './modules/canvasSetup.js';
 import { updateNodeId } from './modules/nodeId.js';
 import { changeNodeConnections } from './modules/nodeConnections.js';
@@ -16,14 +16,27 @@ elements.randomLayoutButton.addEventListener('click', () => {
 let startNode = ""
 let endNode = ""
 elements.startNodeButton.addEventListener('click', () => {
-  elements.startNodeButton.classList.remove('active')
-  elements.endNodeButton.classList.add('active')
+  elements.startNodeButton.classList.add('active')
+  elements.endNodeButton.classList.remove('active')
   startNode = elements.nodeIdView.textContent
 })
 elements.endNodeButton.addEventListener('click', () => {
-  elements.endNodeButton.classList.remove('active')
-  elements.startNodeButton.classList.add('active')
+  elements.endNodeButton.classList.add('active')
+  elements.startNodeButton.classList.remove('active')
   endNode = elements.nodeIdView.textContent
+  
+  // Trigger navigator panel when both startNode and endNode are set
+  if (startNode && endNode) {
+    togglePanel('navigator')
+  }
+})
+
+elements.nextButton.addEventListener('click', () => {
+  console.log('Next button clicked')
+})
+
+elements.fastForwardButton.addEventListener('click', () => {
+  console.log('Fast-Forward button clicked')
 })
 
 window.addEventListener('resize', () => resizeCanvas(elements))
